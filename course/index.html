@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta name="viewport" content="width= device-width, initial-scale=1.0" />
+<link rel="stylesheet" type="text/css" href="css/main.css" />
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.ui.touch-punch.js"></script>
+<script src="js/jQueryRotateCompressed.2.2.js" type="text/javascript"></script>
+
+</head>
+<body>
+<!-- Main Content Page-->
+<div id="startContainer">
+	<img id="mainStart" src="images/start.gif" draggable="true" />	
+	<div id="circle"></div>		
+</div>
+<div id="mainContainer">	 
+	<div class="title-bar">
+		<div class="title-content">Match states with their nick names.</div>
+	</div>
+	<div id="top-box" id="left">	
+		<div class="fix_area">
+			<!-- Drag Area -->
+			<div class="drag-area">
+				<div id="dragOption1" class="options">
+					<div class="content">Vijayawada (Andhra Pradesh)</div>
+					<div id="box1" class="boxes">
+						<div class="dragItem drag-box Vijayawada" id="drag-box1">
+							<div class="inner-drag-box"></div>
+						</div>
+						<div id="line1" class="line"></div>
+						<div id="answer-box1" class="answer-line"></div>
+					</div>
+				</div>
+				<div id="dragOption2" class="options">
+					<div class="content">Mumbai (Maharashtra)</div>
+					<div id="box2" class="boxes">
+						<div class="dragItem drag-box Mumbai" id="drag-box2">
+							<div class="inner-drag-box"></div>
+						</div>
+						<div id="line2" class="line"></div>
+						<div id="answer-box2" class="answer-line"></div>
+					</div>
+				</div>
+				<div id="dragOption3" class="options">
+					<div class="content">Ahmedabad (Gujarat)</div>
+					<div id="box3" class="boxes">
+						<div class="dragItem drag-box Ahmedabad" id="drag-box3">
+							<div class="inner-drag-box"></div>
+						</div>	
+						<div id="line3" class="line"></div>
+						<div id="answer-box3" class="answer-line"></div>
+					</div>
+				</div>
+				<div id="dragOption4" class="options">
+					<div class="content">Panipat (Haryana)</div>
+					<div id="box4" class="boxes">
+						<div class="dragItem drag-box Panipat" id="drag-box4">
+							<div class="inner-drag-box"></div>
+						</div>
+						<div id="line4" class="line"></div>
+						<div id="answer-box4" class="answer-line"></div>
+					</div>
+				</div>
+				<div id="dragOption5" class="options">
+					<div class="content">Bhagalpur (Bihar)</div>
+					<div id="box5" class="boxes">
+						<div class="dragItem drag-box Bhagalpur" id="drag-box5">
+							<div class="inner-drag-box"></div>
+						</div>
+						<div id="line5" class="line"></div>
+						<div id="answer-box5" class="answer-line"></div>
+					</div>
+				</div>
+				<div id="dragOption6" class="options">
+					<div class="content">Nagpur (Maharashtra)</div>
+					<div id="box6" class="boxes">
+						<div class="dragItem drag-box Nagpur" id="drag-box6">
+							<div class="inner-drag-box"></div>
+						</div>
+						<div id="line6" class="line"></div>
+						<div id="answer-box6" class="answer-line"></div>
+					</div>
+				</div>				
+			</div>	
+
+			<!-- Drop Area -->
+			<div class="drop-area">
+				<div id="dropOption1" class="dropoptions">
+					<div id="box8" class="dropboxes">
+						<div id="drop-box1 " class="drop-box dropItem Ahmedabad">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">Boston of India</div>
+				</div>
+				<div id="dropOption2" class="dropoptions">
+					<div id="box9" class="dropboxes">
+						<div id="drop-box2" class="drop-box dropItem Bhagalpur">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">Silk City of India</div>
+				</div>
+				<div id="dropOption3" class="dropoptions">
+					<div id="box10" class="dropboxes">
+						<div id="drop-box3" class="drop-box dropItem Vijayawada">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">City of Victory</div>
+				</div>
+				<div id="dropOption4" class="dropoptions">
+					<div id="box11" class="dropboxes">
+						<div id="drop-box4" class="drop-box dropItem Mumbai">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">City of Dreams</div>
+				</div>
+				<div id="dropOption5" class="dropoptions">
+					<div id="box12" class="dropboxes">
+						<div id="drop-box5" class="drop-box dropItem Nagpur">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">Orange City</div>
+				</div>
+				<div id="dropOption6" class="dropoptions">
+					<div id="box13" class="dropboxes">
+						<div id="drop-box6" class="drop-box dropItem Panipat">
+							<div class="drop-boxes"></div>
+						</div>
+					</div>
+					<div class="dropcontent">City of Weavers</div>
+				</div>
+			</div>	
+		</div>
+		
+		<!-- Bottom buttons -->
+		<div id="bottomButtons">
+			<div id="show"><img id="show-img" src="images/show-1.png" draggable="false"/></div>
+			<div id="refresh"><img id="refresh-img" src="images/refresh-1.png" draggable="false"/></div>
+		</div>
+		<iframe id="iframe1" src="gifs/First/First.html"  width="30%" height="45%" style=" position: absolute; bottom: -1vmin; right: -6vmin; border: 0; z-index: 0;"></iframe>
+		<iframe id="iframe2" src="gifs/Correct/Correct.html"  width="20%" height="45%" style=" position: absolute; bottom: 0.3vmin; right: -3.8vmin; border: 0; z-index: 0;"></iframe>
+		<iframe id="iframe3" src="gifs/Incorrect/Incorrect.html"  width="20%" height="45%" style=" position: absolute; bottom: 0.5vmin; right: -4.3vmin; border: 0; z-index: 0;"></iframe>
+		<!-- <div id="option-container"></div> -->
+	</div>	
+	<div id="hideContainer"></div>
+	<div id="showhideContainer1"></div>
+</div>
+	
+<!-- Result Page -->
+<div id="resultContainer">	 
+
+	<span class="showResult" id="totalCount">0</span>
+	<span class="showResult" id="totalCorrect" style="top: 38.5vmin;">0</span>
+	<span class="showResult" id="totalIncorrect" style="top: 48.2vmin;">0</span>
+	
+	<div id="result-refresh">
+		<div class="result-refresh-content"><img id="restart" src="images/restart.png" style="width: 26vmin;" draggable="false"/></div>
+	</div>
+</div>
+
+<script src="js/script.js"></script>
+<script>$('#widget').draggable();</script>
+</body>
+
+<!-- Mirrored from 182.18.160.34/jai/DEMO/Act_10_1/course/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 27 Jul 2020 11:24:28 GMT -->
+</html> 
+

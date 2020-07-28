@@ -1,0 +1,417 @@
+* {box-sizing: border-box}
+body{
+	overflow-y: hidden;
+}
+:root {
+  --ratio: 9 / 16;
+  --width: 100vmin;
+  --height: calc(var(--width) * var(--ratio));
+  --white: #ffffff;
+}
+@font-face{
+    font-family: 'KrutiDev';
+    src: url('k010.html') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#resultContainer {display: none}
+/* Slide Layout */
+#startContainer{
+    width: 100vw; 
+    height: 56.20vw; /* height:width ratio = 9/16 = .5625    126:75 */
+    max-height: 100vh;
+    max-width: 177.8vh; /* 16/9 = 1.778     */
+    margin: auto;
+    position: absolute;
+    top:0;bottom:0; /* vertical center */
+    left:0;right:0; /* horizontal center */
+    background-color: rgba(15, 162, 218, 0.5);
+	z-index: 900;
+}  
+#mainStart{
+	width: 30%;
+    position: absolute;
+    top: 24%;
+    left: 32%;
+	cursor: pointer;
+}
+#circle{
+	width: 41vmin;
+    height: 41vmin;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 30vmin;
+    left: 63vmin;
+    z-index: -1;
+}
+#mainContainer{
+	margin: 0vmin auto;
+	padding: 0vmin;
+	width: 100%;
+	height: var(--height);
+	font-family: Comic Sans MS !important;
+}
+.title-bar{      
+    background-color: rgba(165, 231, 107, 0.9);
+	padding: 1vmin;
+    position: absolute;
+    left: 22vmin;
+    top: 2.5vmin;
+    z-index: 100;
+    width: 75%;
+    border-radius: 4vmin;	
+}
+.title-content{
+	font-size: 4vmin;
+    color: #000000;
+    padding: 2vmin;
+    text-align: center;
+    width: 100%;
+    border: 1px dashed #000000;
+	border-radius: 3.5vmin;
+	font-weight: bold;
+}
+#title-image{
+	width: 4%;
+    position: relative;
+    top: 1vmin;
+}
+#top-box{
+    height:98vmin;
+    width: 95%;
+    position: absolute;
+	z-index: 70;
+    left: 2vmin;
+    padding: 6vmin;
+	background: url('../images/bg2.png'); 
+	background-repeat: no-repeat;
+	background-size: cover;	
+}
+.fix_area{
+	height: 70vmin;
+    position: absolute;
+    top: 14vmin;
+    width: 95%;
+}
+#content-box{
+    margin-top: 5vmin;
+    width: 100%;
+    top: calc(var(--height)*(.35));
+    z-index: 70;
+    left: 0vmin;
+    padding: 3vmin 6vmin;
+}
+.options-outer{
+	border: 5px solid #99cc00;
+    padding: 0.5vmin;
+    position: absolute;
+    z-index: 100;
+    width: 19vmin;
+    border-radius: 0vmin 4vmin;
+    height: 17vmin;
+	background-color: #fff;
+	box-shadow: 3px 5px 6px 0px rgba(144,145,145,1);
+}
+.content{
+    font-size: 3.5vmin;
+    font-weight: bold;
+    position: absolute;
+}
+.dropcontent{
+	font-size: 3.5vmin;
+    font-weight: bold;
+    position: absolute;
+    margin-left: 10vmin;
+}
+.options{
+	margin-bottom: 4.5vmin;
+}
+.dropoptions{
+	margin-bottom: 4.5vmin;
+    height: 6.6vmin;
+}
+.drag-area{
+	position: absolute;
+    left: 11.7vmin;
+    z-index: 100;
+    width: 38%;
+    padding: 3.2vmin 0vmin;
+    border-radius: 2vmin;
+}
+.boxes{
+	width: 6.5vmin;
+    height: 6.5vmin;
+    margin-left: 51vmin;
+    background-color: #00a7d1;
+    border-radius: 5vmin;
+    z-index: -200;
+}
+.dropboxes{
+	width: 6.5vmin;
+    height: 6.5vmin;
+    margin-left: 0vmin;
+    background-color: #00a7d1;
+    border-radius: 5vmin;
+    z-index: -200;
+    position: absolute;
+}
+.drag-box{
+	width: 6.5vmin;
+    border-radius: 5vmin;
+    text-align: center;
+    height: 6.5vmin;
+	cursor: pointer;
+	background-color: #1592b1;
+	padding: 0.65vmin;
+	z-index: 1000;
+}
+.inner-drag-box{
+	width: 5.2vmin;
+    border-radius: 5vmin;
+    text-align: center;
+    height: 5vmin;
+	border: 0.2vmin solid #f2f6f7;
+	background-color: #337a91;
+}
+.line{
+	width: 0.5vmin;
+	height: 0.5vmin;
+	border: solid thin #b14502;
+	position: absolute;
+	background-color: #b14502;
+	top: 61vmin;
+    left: 36vmin;
+	z-index: 900;
+}
+#answer-box1{
+	width: 0.5vmin;
+    height: 41.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 12.5vmin;
+    left: 91vmin;
+    z-index: 0;
+    transform: rotate(-236.4342deg);
+    transform-origin: 50% 50%;
+}
+#answer-box2{
+    width: 0.5vmin;
+    height: 41.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 23.5vmin;
+    left: 91vmin;
+    z-index: 0;
+    transform: rotate(-236.4342deg);
+    transform-origin: 50% 50%;
+}
+#answer-box3{
+width: 0.5vmin;
+    height: 41.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 12.1vmin;
+    left: 91vmin;
+    z-index: 0;
+    transform: rotate(-303.4342deg);
+    transform-origin: 50% 50%;
+} 
+#answer-box4{
+    width: 0.5vmin;
+    height: 41.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 45.5vmin;
+    left: 91vmin;
+    z-index: 0;
+    transform: rotate(-236.4342deg);
+    transform-origin: 50% 50%;
+} 
+#answer-box5{
+    width: 0.5vmin;
+    height: 48.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 25.1vmin;
+    left: 90.8vmin;
+    z-index: 10000;
+    transform: rotate(-313.4342deg);
+    transform-origin: 50% 50%;
+} 
+#answer-box6{
+    width: 0.5vmin;
+    height: 36.5vmin;
+    border: solid thin #b14502;
+    position: fixed;
+    background-color: #b14502;
+    top: 53.1vmin;
+    left: 90.8vmin;
+    z-index: 10000;
+    transform: rotate(-287.4342deg);
+    transform-origin: 50% 50%;
+} 
+.drop-area{
+    position: absolute;
+    width: 32%;
+    top: 3.2vmin;
+    left: 97vmin;
+}
+.drop-box{
+	float: left;
+    margin-right: 16.5vmin;
+	width: 6.5vmin;
+    border-radius: 5vmin;
+    text-align: center;
+    height: 6.5vmin;
+	background-color: #f87227;
+	padding: 0.65vmin;
+}
+.drop-boxes{
+	width: 5.2vmin;
+    border-radius: 5vmin;
+    text-align: center;
+    height: 5vmin;
+	border: 0.4vmin solid #fa8d36;
+	background-color: #f9601a;
+}
+
+#content-box2{
+	margin-top: 58vmin;
+    margin-left: 9vmin;
+    font-size: 7vmin;
+    font-weight: bold;
+    text-align: center;
+}
+.answers-outer{
+	border: 2px solid #99cc00;
+    padding: 0.5vmin;
+    position: absolute;
+    z-index: 100;
+    width: 10vmin;
+    border-radius: 0vmin 2vmin;
+    height: 8vmin;
+	background-color: #fff;
+	box-shadow: 3px 5px 6px 0px rgba(144,145,145,1);
+}
+#answer1{
+	margin-left: 1vmin;
+}
+#answer2{
+	margin-left: 23vmin;
+}
+#answer3{
+	margin-left: 46vmin;
+}
+#answer4{
+	margin-left: 69vmin;
+}
+#answer5{
+	margin-left: 92vmin;
+}
+#answer6{
+	margin-left: 115vmin;
+}
+#resultCounter{
+    width: 10vmin;
+    height: 7vmin;
+    /* border: 1px solid; */
+    position: absolute;
+    bottom: 0vmin;
+    right: 10vmin;
+    font-family: BradBunR !important;
+    color: #fff;
+    font-size: 5vmin;
+    text-align: center;
+}
+#resultContainer{
+	background-image: url(../images/bg3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 96.2vmin;
+    width: 97%;
+    position: absolute;
+    top: 2.4vmin;
+    left: -0.4vmin;	
+}
+.showResult{
+	width: 8vmin;
+    /* border: 1px solid; */
+    position: absolute;
+    top: 28vmin;
+    left: 95vmin;
+    font-size: 5vmin;
+    text-align: center;
+    font-family: Calibri !important;
+    font-weight: bold;
+}
+#result-refresh{
+	position: absolute;
+    left: 73.7vmin;
+    bottom: 10vmin;
+    z-index: 100;
+    cursor: pointer;
+}
+#restart2{
+	width: 28vmin; 
+	position: absolute; 
+	left:-1.2vmin; 
+	top:-1.2vmin;
+}
+#bottomButtons{
+	position: absolute;
+    left: 49.7vmin;
+    /* bottom: 8vmin; */
+    z-index: 100;
+    width: 55%;
+    top: 78.5vmin;
+}
+#show, #refresh{
+	position: absolute;
+    width: 20%;
+    top: 0.5vmin;
+    left: 15vmin;
+	opacity: 0.5;
+}
+#show img, #refresh img{
+	width: 100%;
+}
+#refresh{
+	left: 40vmin;
+	cursor: pointer;
+	opacity: 1;
+	z-index: 300;
+}
+#hideContainer{
+	position: absolute;
+    width: 81%;
+    top: 16vmin;
+    z-index: 500;
+    height: 84vmin;
+    left: 16vmin;
+}
+#showhideContainer1{
+	position: absolute;
+    width: 18%;
+    top: 80vmin;
+    z-index: 200;
+    height: 20vmin;
+    left: 57vmin;
+
+
+@media(max-width: 450px) {
+  .inner-drag-box {
+			border: 0.4vmin solid #f2f6f7;
+		  }
+}
+@media(max-width: 230px) {
+  .inner-drag-box {
+			border: 0.5vmin solid #f2f6f7;
+		  }
+}
